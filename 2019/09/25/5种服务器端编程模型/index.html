@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="5种服务器端编程模型 1. 单进程同步阻塞模型单进程同步阻塞模型是最简单的一种I/O模型。优点：编程简单缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功 示例代码如下： 123456789101112131415161718192021222324252627282930313233#include &amp;quot;stdio.h&amp;quot;#include &amp;quo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/04/17/hello-world/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/09/25/5种服务器端编程模型/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="5种服务器端编程模型 1. 单进程同步阻塞模型单进程同步阻塞模型是最简单的一种I/O模型。优点：编程简单缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功 示例代码如下： 123456789101112131415161718192021222324252627282930313233#include &amp;quot;stdio.h&amp;quot;#include &amp;quo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-16T16:38:44.843Z">
+<meta property="og:updated_time" content="2019-09-25T14:47:54.504Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="5种服务器端编程模型 1. 单进程同步阻塞模型单进程同步阻塞模型是最简单的一种I/O模型。优点：编程简单缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功 示例代码如下： 123456789101112131415161718192021222324252627282930313233#include &amp;quot;stdio.h&amp;quot;#include &amp;quo">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/17/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/25/5种服务器端编程模型/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Hello World | Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/5种服务器端编程模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leo">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="创建时间：2019-04-17 00:43:20 / 修改时间：00:38:44" itemprop="dateCreated datePublished" datetime="2019-04-17T00:43:20+08:00">2019-04-17</time>
+              <time title="创建时间：2019-09-25 22:47:08 / 修改时间：22:47:54" itemprop="dateCreated datePublished" datetime="2019-09-25T22:47:08+08:00">2019-09-25</time>
             
 
             
@@ -371,16 +371,14 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h3 id="5种服务器端编程模型"><a href="#5种服务器端编程模型" class="headerlink" title="5种服务器端编程模型"></a>5种服务器端编程模型</h3><hr>
+<h5 id="1-单进程同步阻塞模型"><a href="#1-单进程同步阻塞模型" class="headerlink" title="1. 单进程同步阻塞模型"></a>1. 单进程同步阻塞模型</h5><p>单进程同步阻塞模型是最简单的一种I/O模型。<br>优点：编程简单<br>缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功</p>
+<p><strong>示例代码如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stdio.h&quot;</span><br><span class="line">#include &quot;unistd.h&quot;</span><br><span class="line">#include &quot;string.h&quot;</span><br><span class="line">#include &quot;sys/types.h&quot;</span><br><span class="line">#include &quot;sys/socket.h&quot;</span><br><span class="line">#include &quot;netinet/in.h&quot;</span><br><span class="line">#include &quot;arpa/inet.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">        struct sockaddr_in client_addr;</span><br><span class="line">        char buffer[100] = &#123;0&#125;;</span><br><span class="line">        socklen_t length = sizeof(client_addr);</span><br><span class="line"></span><br><span class="line">        int server_sockfd = socket(AF_INET, SOCK_STREAM, 0);</span><br><span class="line">        struct sockaddr_in server_sockaddr;</span><br><span class="line">        server_sockaddr.sin_family = AF_INET;</span><br><span class="line">        server_sockaddr.sin_port = htons(1234);</span><br><span class="line">        server_sockaddr.sin_addr.s_addr = htonl(INADDR_ANY);</span><br><span class="line"></span><br><span class="line">        bind(server_sockfd, (struct sockaddr*)&amp;server_sockaddr, sizeof(server_sockaddr));</span><br><span class="line">        listen(server_sockfd, 5);</span><br><span class="line">        while(1) &#123;</span><br><span class="line">                memset(buffer, 0, sizeof(buffer));</span><br><span class="line">                int conn = accept(server_sockfd, (struct sockaddr*)&amp;client_addr, &amp;length);</span><br><span class="line">                int len = recv(conn, buffer, sizeof(buffer), 0);</span><br><span class="line">                printf(&quot;Received: %s\n&quot;, buffer);</span><br><span class="line">                send(conn, buffer, len, 0);</span><br><span class="line">                close(conn);</span><br><span class="line">        &#125;</span><br><span class="line">        close(server_sockfd);</span><br><span class="line">        return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="2-多进程并发模型"><a href="#2-多进程并发模型" class="headerlink" title="2. 多进程并发模型"></a>2. 多进程并发模型</h5><p>多进程并发模型可以避免程序阻塞在read系统调用上，没有客户端建立连接时，会阻塞在accept系统调用上，当有客户端连接时，立即创建一个子进程来处理与该客户端的数据交互。<br>优点： 避免程序阻塞在read系统调用上，影响其他客户端的连接。<br>缺点：创建大量子进程会占用太多系统资源。</p>
+<p><strong>示例代码如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -410,15 +408,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/17/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/25/5种服务器端编程模型/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -529,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#5种服务器端编程模型"><span class="nav-number">1.</span> <span class="nav-text">5种服务器端编程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-单进程同步阻塞模型"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 单进程同步阻塞模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-多进程并发模型"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 多进程并发模型</span></a></li></ol></li></ol></div>
             
 
           </div>

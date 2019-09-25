@@ -286,6 +286,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/5种服务器端编程模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/25/5种服务器端编程模型/" class="post-title-link" itemprop="url">未命名</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-25 22:47:08 / 修改时间：22:47:54" itemprop="dateCreated datePublished" datetime="2019-09-25T22:47:08+08:00">2019-09-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="5种服务器端编程模型"><a href="#5种服务器端编程模型" class="headerlink" title="5种服务器端编程模型"></a>5种服务器端编程模型</h3><hr>
+<h5 id="1-单进程同步阻塞模型"><a href="#1-单进程同步阻塞模型" class="headerlink" title="1. 单进程同步阻塞模型"></a>1. 单进程同步阻塞模型</h5><p>单进程同步阻塞模型是最简单的一种I/O模型。<br>优点：编程简单<br>缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功</p>
+<p><strong>示例代码如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stdio.h&quot;</span><br><span class="line">#include &quot;unistd.h&quot;</span><br><span class="line">#include &quot;string.h&quot;</span><br><span class="line">#include &quot;sys/types.h&quot;</span><br><span class="line">#include &quot;sys/socket.h&quot;</span><br><span class="line">#include &quot;netinet/in.h&quot;</span><br><span class="line">#include &quot;arpa/inet.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">        struct sockaddr_in client_addr;</span><br><span class="line">        char buffer[100] = &#123;0&#125;;</span><br><span class="line">        socklen_t length = sizeof(client_addr);</span><br><span class="line"></span><br><span class="line">        int server_sockfd = socket(AF_INET, SOCK_STREAM, 0);</span><br><span class="line">        struct sockaddr_in server_sockaddr;</span><br><span class="line">        server_sockaddr.sin_family = AF_INET;</span><br><span class="line">        server_sockaddr.sin_port = htons(1234);</span><br><span class="line">        server_sockaddr.sin_addr.s_addr = htonl(INADDR_ANY);</span><br><span class="line"></span><br><span class="line">        bind(server_sockfd, (struct sockaddr*)&amp;server_sockaddr, sizeof(server_sockaddr));</span><br><span class="line">        listen(server_sockfd, 5);</span><br><span class="line">        while(1) &#123;</span><br><span class="line">                memset(buffer, 0, sizeof(buffer));</span><br><span class="line">                int conn = accept(server_sockfd, (struct sockaddr*)&amp;client_addr, &amp;length);</span><br><span class="line">                int len = recv(conn, buffer, sizeof(buffer), 0);</span><br><span class="line">                printf(&quot;Received: %s\n&quot;, buffer);</span><br><span class="line">                send(conn, buffer, len, 0);</span><br><span class="line">                close(conn);</span><br><span class="line">        &#125;</span><br><span class="line">        close(server_sockfd);</span><br><span class="line">        return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="2-多进程并发模型"><a href="#2-多进程并发模型" class="headerlink" title="2. 多进程并发模型"></a>2. 多进程并发模型</h5><p>多进程并发模型可以避免程序阻塞在read系统调用上，没有客户端建立连接时，会阻塞在accept系统调用上，当有客户端连接时，立即创建一个子进程来处理与该客户端的数据交互。<br>优点： 避免程序阻塞在read系统调用上，影响其他客户端的连接。<br>缺点：创建大量子进程会占用太多系统资源。</p>
+<p><strong>示例代码如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -464,7 +613,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
