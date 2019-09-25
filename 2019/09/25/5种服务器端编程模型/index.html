@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="5种服务器端编程模型 1. 单进程同步阻塞模型单进程同步阻塞模型是最简单的一种I/O模型。优点：编程简单缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功 示例代码如下： 123456789101112131415161718192021222324252627282930313233#include &amp;quot;stdio.h&amp;quot;#include &amp;quo">
+  <meta name="description" content="单进程同步阻塞模型单进程同步阻塞模型是最简单的一种I/O模型。优点：编程简单缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功 示例代码如下： 123456789101112131415161718192021222324252627282930313233#include &amp;quot;stdio.h&amp;quot;#include &amp;quot;unistd.h&amp;qu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="常见服务器端网络编程模型">
 <meta property="og:url" content="http://yoursite.com/2019/09/25/5种服务器端编程模型/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="5种服务器端编程模型 1. 单进程同步阻塞模型单进程同步阻塞模型是最简单的一种I/O模型。优点：编程简单缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功 示例代码如下： 123456789101112131415161718192021222324252627282930313233#include &amp;quot;stdio.h&amp;quot;#include &amp;quo">
+<meta property="og:description" content="单进程同步阻塞模型单进程同步阻塞模型是最简单的一种I/O模型。优点：编程简单缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功 示例代码如下： 123456789101112131415161718192021222324252627282930313233#include &amp;quot;stdio.h&amp;quot;#include &amp;quot;unistd.h&amp;qu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-25T14:47:54.504Z">
+<meta property="og:updated_time" content="2019-09-25T15:00:15.021Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="5种服务器端编程模型 1. 单进程同步阻塞模型单进程同步阻塞模型是最简单的一种I/O模型。优点：编程简单缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功 示例代码如下： 123456789101112131415161718192021222324252627282930313233#include &amp;quot;stdio.h&amp;quot;#include &amp;quo">
+<meta name="twitter:title" content="常见服务器端网络编程模型">
+<meta name="twitter:description" content="单进程同步阻塞模型单进程同步阻塞模型是最简单的一种I/O模型。优点：编程简单缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功 示例代码如下： 123456789101112131415161718192021222324252627282930313233#include &amp;quot;stdio.h&amp;quot;#include &amp;quot;unistd.h&amp;qu">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title> | Hexo</title>
+  <title>常见服务器端网络编程模型 | Hexo</title>
   
 
 
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">常见服务器端网络编程模型
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="创建时间：2019-09-25 22:47:08 / 修改时间：22:47:54" itemprop="dateCreated datePublished" datetime="2019-09-25T22:47:08+08:00">2019-09-25</time>
+              <time title="创建时间：2019-09-25 22:47:08 / 修改时间：23:00:15" itemprop="dateCreated datePublished" datetime="2019-09-25T22:47:08+08:00">2019-09-25</time>
             
 
             
@@ -371,12 +371,12 @@
       
 
       
-        <h3 id="5种服务器端编程模型"><a href="#5种服务器端编程模型" class="headerlink" title="5种服务器端编程模型"></a>5种服务器端编程模型</h3><hr>
-<h5 id="1-单进程同步阻塞模型"><a href="#1-单进程同步阻塞模型" class="headerlink" title="1. 单进程同步阻塞模型"></a>1. 单进程同步阻塞模型</h5><p>单进程同步阻塞模型是最简单的一种I/O模型。<br>优点：编程简单<br>缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功</p>
+        <hr>
+<h5 id="单进程同步阻塞模型"><a href="#单进程同步阻塞模型" class="headerlink" title="单进程同步阻塞模型"></a>单进程同步阻塞模型</h5><p>单进程同步阻塞模型是最简单的一种I/O模型。<br>优点：编程简单<br>缺点：accept,read,write等系统调用都可能阻塞，导致其他连接无法成功</p>
 <p><strong>示例代码如下：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stdio.h&quot;</span><br><span class="line">#include &quot;unistd.h&quot;</span><br><span class="line">#include &quot;string.h&quot;</span><br><span class="line">#include &quot;sys/types.h&quot;</span><br><span class="line">#include &quot;sys/socket.h&quot;</span><br><span class="line">#include &quot;netinet/in.h&quot;</span><br><span class="line">#include &quot;arpa/inet.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">        struct sockaddr_in client_addr;</span><br><span class="line">        char buffer[100] = &#123;0&#125;;</span><br><span class="line">        socklen_t length = sizeof(client_addr);</span><br><span class="line"></span><br><span class="line">        int server_sockfd = socket(AF_INET, SOCK_STREAM, 0);</span><br><span class="line">        struct sockaddr_in server_sockaddr;</span><br><span class="line">        server_sockaddr.sin_family = AF_INET;</span><br><span class="line">        server_sockaddr.sin_port = htons(1234);</span><br><span class="line">        server_sockaddr.sin_addr.s_addr = htonl(INADDR_ANY);</span><br><span class="line"></span><br><span class="line">        bind(server_sockfd, (struct sockaddr*)&amp;server_sockaddr, sizeof(server_sockaddr));</span><br><span class="line">        listen(server_sockfd, 5);</span><br><span class="line">        while(1) &#123;</span><br><span class="line">                memset(buffer, 0, sizeof(buffer));</span><br><span class="line">                int conn = accept(server_sockfd, (struct sockaddr*)&amp;client_addr, &amp;length);</span><br><span class="line">                int len = recv(conn, buffer, sizeof(buffer), 0);</span><br><span class="line">                printf(&quot;Received: %s\n&quot;, buffer);</span><br><span class="line">                send(conn, buffer, len, 0);</span><br><span class="line">                close(conn);</span><br><span class="line">        &#125;</span><br><span class="line">        close(server_sockfd);</span><br><span class="line">        return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h5 id="2-多进程并发模型"><a href="#2-多进程并发模型" class="headerlink" title="2. 多进程并发模型"></a>2. 多进程并发模型</h5><p>多进程并发模型可以避免程序阻塞在read系统调用上，没有客户端建立连接时，会阻塞在accept系统调用上，当有客户端连接时，立即创建一个子进程来处理与该客户端的数据交互。<br>优点： 避免程序阻塞在read系统调用上，影响其他客户端的连接。<br>缺点：创建大量子进程会占用太多系统资源。</p>
+<h5 id="多进程并发模型"><a href="#多进程并发模型" class="headerlink" title="多进程并发模型"></a>多进程并发模型</h5><p>多进程并发模型可以避免程序阻塞在read系统调用上，没有客户端建立连接时，会阻塞在accept系统调用上，当有客户端连接时，立即创建一个子进程来处理与该客户端的数据交互。<br>优点： 避免程序阻塞在read系统调用上，影响其他客户端的连接。<br>缺点：创建大量子进程会占用太多系统资源。</p>
 <p><strong>示例代码如下：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
@@ -527,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#5种服务器端编程模型"><span class="nav-number">1.</span> <span class="nav-text">5种服务器端编程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-单进程同步阻塞模型"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 单进程同步阻塞模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-多进程并发模型"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 多进程并发模型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#单进程同步阻塞模型"><span class="nav-number">1.</span> <span class="nav-text">单进程同步阻塞模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多进程并发模型"><span class="nav-number">2.</span> <span class="nav-text">多进程并发模型</span></a></li></ol></div>
             
 
           </div>
